@@ -5,12 +5,6 @@ user.schema.description = "for managing users";
 
 user.persist('memory');
 
-user.property('email', {
-  "type": "string",
-  "format": "email",
-  "required": true
-});
-
 function serialize(user, done) {
   done(null, user.id);
 }
