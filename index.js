@@ -22,8 +22,8 @@ user.method('serialize', serialize, {
 
 function deserialize(id, done) {
   user.get(id, function(err, _user) {
-    if (err) { throw err; }
-    done(null, _user);
+    if (err) { return done(err); }
+    return done(null, _user);
   });
 }
 user.method('deserialize', deserialize, {
